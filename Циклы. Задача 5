@@ -1,0 +1,25 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.DecimalFormat;
+
+public class firstPartTask1 {
+    public static void main(String[] args) throws IOException {
+        // Циклы. Задача 4.Найти сумму чисел ряда, которые больше числа [е]
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Введите количество членов в последовательности");
+        int n = Integer.parseInt(reader.readLine());
+        System.out.println("Введите число е, с которым будем сравнивать");
+        double e = Double.parseDouble(reader.readLine());
+
+        double sum = 0;
+        for (int i = 1; i <= n; i++) {
+            double a = 1 / Math.pow(2, i) + 1 / Math.pow(3, i);
+            if (Math.abs(a) >= e)
+                sum +=a;
+        }
+        DecimalFormat df = new DecimalFormat("###.###");
+        System.out.println("Сумма равна " + df.format(sum));
+    }
+}
