@@ -1,15 +1,21 @@
-import java.util.Formatter;
-import java.io.PrintStream;
+package by.antonkhmara.main;
 
-public class firstPartTask1 {
-    public static void main(String[] args) throws Exception {
-        // Циклы. Задача 6. Вывести на экран таблицу соответсвий между символами и их числовыми значениями
-        int index =0;
-        for (char c=0; c < Character.MAX_VALUE; c++) {
-            index += 1;
-            System.out.printf("%-15s", c +"-"+ index);
-                if (index % 10 == 0)
-                    System.out.println("");
-        }
-    }
+import java.util.Scanner;
+
+public class Start {
+
+	public static void main(String args[]) {
+
+		char a = 0;
+		int i = 0;
+
+		while (a < Character.MAX_VALUE) {
+			System.out.print("№" + i + " - " + a + "\t");
+			a++;
+			i++;
+			
+			if (i % 11 == 0)
+				System.out.println("");
+		}
+	}
 }
